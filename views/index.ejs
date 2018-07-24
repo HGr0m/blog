@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>blog</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+</head>
+<body>
+	<style>
+		body{
+			display: flex;
+			flex-direction: column;
+			background-color: #c7b39b;
+		}
+		h1{
+			background-color: #9b8b79;
+			padding-left: 20px;
+			font-family: Tahoma;
+			text-align: center;
+		}
+		.post{
+			margin: 5px;
+			width: 600px;
+			height: 135px;
+			border: 1px solid #666;
+			overflow: hidden;
+			background-color: #e5d8c9;
+			margin-left: auto;
+   			margin-right: auto;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		a:hover {	
+			text-decoration: none;
+			color: black;
+		}
+		h3{
+			background-color: #bca893;
+			line-height: 40px;
+			margin-bottom: 0;
+			padding-bottom: 0;
+			padding-left: 20px;
+		}
+		p{
+			padding-left: 10px;
+			padding-right: 5px;
+		}
+		h4{
+			display: block;
+			margin-left: auto;
+   			margin-right: auto;
+		}
+		hr{
+			margin-top: 0;
+		}
+	</style>
+	<h1>My first blog</h1>
+	<br>
+	<h4 class="fas fa-pen"><a href="/write">   Write new post</a></h4>
+	<br>
+	<% for(let i = 0; i < posts.length; i++) { %>
+	<div class="post">
+		<h3><a href='/post/<%= (i + 1)%>'><%= posts[i].title%><a/></h3>
+		<hr>
+		<p><%= posts[i].content%></p>
+	</div>
+	<% } %>
+</body>
+</html>
